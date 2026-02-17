@@ -1,0 +1,25 @@
+layout:
+    actions:
+        - '@setBlockTheme':
+            themes: 'categories_landing.html.twig'
+
+        - '@addTree':
+            items:
+                category_cards_styles:
+                    blockType: container
+            tree:
+                head:
+                    category_cards_styles: ~
+
+        - '@addTree':
+            items:
+                category_cards_section:
+                    blockType: container
+            tree:
+                page_content:
+                    category_cards_section: ~
+
+        - '@move':
+            id: category_cards_section
+            parentId: page_content
+            prepend: true

@@ -1,0 +1,309 @@
+{% block _category_cards_styles_widget %}
+    <style>
+        /* =============================================
+           Spot7 Category Cards – Apple-Style Landing
+           Image backgrounds with text overlay
+           ============================================= */
+
+        .category-cards {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 24px 40px;
+        }
+
+        .category-cards__heading {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .category-cards__title {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+            margin: 0 0 12px;
+            line-height: 1.1;
+        }
+
+        .category-cards__subtitle {
+            font-size: 18px;
+            color: #86868b;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        /* --- Grid Layout --- */
+        .category-cards__grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        /* --- Individual Card --- */
+        .category-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: #ffffff;
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* --- Background Image --- */
+        .category-card__bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 0;
+        }
+
+        .category-card:hover .category-card__bg {
+            transform: scale(1.08);
+        }
+
+        /* --- Gradient Overlay --- */
+        .category-card__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.3) 40%,
+                rgba(0, 0, 0, 0.05) 100%
+            );
+            z-index: 1;
+            transition: background 0.4s ease;
+        }
+
+        .category-card:hover .category-card__overlay {
+            background: linear-gradient(
+                to top,
+                rgba(33, 64, 97, 0.85) 0%,
+                rgba(33, 64, 97, 0.4) 40%,
+                rgba(33, 64, 97, 0.05) 100%
+            );
+        }
+
+        /* --- Card Content --- */
+        .category-card__content {
+            position: relative;
+            z-index: 2;
+            padding: 28px 24px;
+        }
+
+        .category-card__name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin: 0 0 8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-card__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.85);
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .category-card:hover .category-card__cta {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .category-card__cta-arrow {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover .category-card__cta-arrow {
+            transform: translateX(4px);
+        }
+
+        /* --- Accent Dot (top-left corner) --- */
+        .category-card__accent {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #19a6ff;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .category-card:hover .category-card__accent {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* =============================================
+           Responsive
+           ============================================= */
+
+        /* Tablet: 3 columns top, 2 bottom */
+        @media (max-width: 1100px) {
+            .category-cards__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .category-card {
+                min-height: 320px;
+            }
+
+            .category-cards__title {
+                font-size: 34px;
+            }
+        }
+
+        /* Mobile large: 2 columns */
+        @media (max-width: 768px) {
+            .category-cards {
+                padding: 40px 16px 24px;
+            }
+
+            .category-cards__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .category-card {
+                min-height: 260px;
+            }
+
+            .category-card__name {
+                font-size: 20px;
+            }
+
+            .category-cards__title {
+                font-size: 28px;
+            }
+
+            .category-cards__subtitle {
+                font-size: 16px;
+            }
+        }
+
+        /* Mobile small: 1 column */
+        @media (max-width: 480px) {
+            .category-cards__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-card {
+                min-height: 220px;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block _category_cards_section_widget %}
+    <section class="category-cards">
+        <div class="category-cards__heading">
+            <h2 class="category-cards__title">Our Products</h2>
+            <p class="category-cards__subtitle">Choose a category to explore</p>
+        </div>
+
+        <div class="category-cards__grid">
+            {# --- E-Paper --- #}
+            <a href="#" class="category-card">
+                <div class="category-card__bg"
+                     style="background-image: url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=800&fit=crop&q=80'); background-color: #2c3e50;">
+                </div>
+                <div class="category-card__overlay"></div>
+                <span class="category-card__accent"></span>
+                <div class="category-card__content">
+                    <h3 class="category-card__name">E-Paper</h3>
+                    <span class="category-card__cta">
+                        Explore <span class="category-card__cta-arrow">&rarr;</span>
+                    </span>
+                </div>
+            </a>
+
+            {# --- Beacons --- #}
+            <a href="#" class="category-card">
+                <div class="category-card__bg"
+                     style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=800&fit=crop&q=80'); background-color: #1a3a5c;">
+                </div>
+                <div class="category-card__overlay"></div>
+                <span class="category-card__accent"></span>
+                <div class="category-card__content">
+                    <h3 class="category-card__name">Beacons</h3>
+                    <span class="category-card__cta">
+                        Explore <span class="category-card__cta-arrow">&rarr;</span>
+                    </span>
+                </div>
+            </a>
+
+            {# --- Anchors --- #}
+            <a href="#" class="category-card">
+                <div class="category-card__bg"
+                     style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=800&fit=crop&q=80'); background-color: #214061;">
+                </div>
+                <div class="category-card__overlay"></div>
+                <span class="category-card__accent"></span>
+                <div class="category-card__content">
+                    <h3 class="category-card__name">Anchors</h3>
+                    <span class="category-card__cta">
+                        Explore <span class="category-card__cta-arrow">&rarr;</span>
+                    </span>
+                </div>
+            </a>
+
+            {# --- Sensors --- #}
+            <a href="#" class="category-card">
+                <div class="category-card__bg"
+                     style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=800&fit=crop&q=80'); background-color: #1b4332;">
+                </div>
+                <div class="category-card__overlay"></div>
+                <span class="category-card__accent"></span>
+                <div class="category-card__content">
+                    <h3 class="category-card__name">Sensors</h3>
+                    <span class="category-card__cta">
+                        Explore <span class="category-card__cta-arrow">&rarr;</span>
+                    </span>
+                </div>
+            </a>
+
+            {# --- Labels --- #}
+            <a href="#" class="category-card">
+                <div class="category-card__bg"
+                     style="background-image: url('https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=800&fit=crop&q=80'); background-color: #3d3d3d;">
+                </div>
+                <div class="category-card__overlay"></div>
+                <span class="category-card__accent"></span>
+                <div class="category-card__content">
+                    <h3 class="category-card__name">Labels</h3>
+                    <span class="category-card__cta">
+                        Explore <span class="category-card__cta-arrow">&rarr;</span>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </section>
+{% endblock %}
