@@ -15,9 +15,12 @@ layout:
             items:
                 category_cards_section:
                     blockType: container
+                smart_building_section:
+                    blockType: container
             tree:
                 page_content:
                     category_cards_section: ~
+                    smart_building_section: ~
 
         - '@move':
             id: category_cards_section

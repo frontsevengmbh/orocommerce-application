@@ -219,6 +219,339 @@
                 min-height: 220px;
             }
         }
+
+        /* =============================================
+           Spot7 Smart Building System – Apple-Style
+           ============================================= */
+
+        .smart-building {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        /* --- Hero Section --- */
+        .smart-building__hero {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .smart-building__badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 100px;
+            background: linear-gradient(135deg, rgba(25, 166, 255, 0.12), rgba(33, 64, 97, 0.1));
+            color: #19a6ff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .smart-building__hero-title {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            color: #1d1d1f;
+            margin: 0 0 20px;
+        }
+
+        .smart-building__hero-title span {
+            background: linear-gradient(135deg, #19a6ff 0%, #214061 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .smart-building__hero-desc {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #86868b;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* --- Architecture Diagram --- */
+        .smart-building__diagram {
+            position: relative;
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+            border-radius: 28px;
+            padding: 60px 40px;
+            margin-bottom: 80px;
+            overflow: hidden;
+        }
+
+        .smart-building__diagram::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(25, 166, 255, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .smart-building__diagram-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #86868b;
+            margin: 0 0 48px;
+        }
+
+        /* --- Layers Stack --- */
+        .smart-building__layers {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .smart-building__layer {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 24px 32px;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .smart-building__layer:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .smart-building__layer-icon {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .smart-building__layer-icon--cloud {
+            background: linear-gradient(135deg, #e6f4ff, #cceaff);
+        }
+        .smart-building__layer-icon--gateway {
+            background: linear-gradient(135deg, #e0f0ff, #b8dfff);
+        }
+        .smart-building__layer-icon--network {
+            background: linear-gradient(135deg, #dce8f0, #b0c8d8);
+        }
+        .smart-building__layer-icon--devices {
+            background: linear-gradient(135deg, #e6eef4, #c8d8e4);
+        }
+        .smart-building__layer-icon--infrastructure {
+            background: linear-gradient(135deg, #eef2f5, #d8e0e8);
+        }
+
+        .smart-building__layer-content {
+            flex: 1;
+        }
+
+        .smart-building__layer-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin: 0 0 4px;
+        }
+
+        .smart-building__layer-desc {
+            font-size: 14px;
+            color: #86868b;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .smart-building__layer-tag {
+            flex-shrink: 0;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(25, 166, 255, 0.08);
+            color: #19a6ff;
+        }
+
+        /* --- Connector Lines between layers --- */
+        .smart-building__connector {
+            display: flex;
+            justify-content: center;
+            height: 0;
+            position: relative;
+        }
+
+        .smart-building__connector::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 16px;
+            top: -8px;
+            background: linear-gradient(to bottom, #19a6ff, rgba(25, 166, 255, 0.2));
+            border-radius: 1px;
+        }
+
+        /* --- Features Grid --- */
+        .smart-building__features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .smart-building__feature {
+            text-align: center;
+            padding: 48px 32px;
+            border-radius: 20px;
+            background: #f5f5f7;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .smart-building__feature:hover {
+            transform: translateY(-4px);
+            background: #eef2f5;
+        }
+
+        .smart-building__feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            background: linear-gradient(135deg, #214061, #19a6ff);
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(25, 166, 255, 0.2);
+        }
+
+        .smart-building__feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin: 0 0 10px;
+        }
+
+        .smart-building__feature-desc {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #86868b;
+            margin: 0;
+        }
+
+        /* --- CTA Section --- */
+        .smart-building__cta {
+            text-align: center;
+            margin-top: 72px;
+        }
+
+        .smart-building__cta-text {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin: 0 0 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .smart-building__cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 36px;
+            border-radius: 100px;
+            background: linear-gradient(135deg, #214061 0%, #19a6ff 100%);
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 16px rgba(25, 166, 255, 0.3);
+        }
+
+        .smart-building__cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(25, 166, 255, 0.4);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .smart-building__cta-btn-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .smart-building__cta-btn:hover .smart-building__cta-btn-arrow {
+            transform: translateX(4px);
+        }
+
+        /* --- Smart Building Responsive --- */
+        @media (max-width: 1100px) {
+            .smart-building__hero-title {
+                font-size: 40px;
+            }
+
+            .smart-building__features {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .smart-building {
+                padding: 60px 16px;
+            }
+
+            .smart-building__hero {
+                margin-bottom: 48px;
+            }
+
+            .smart-building__hero-title {
+                font-size: 32px;
+            }
+
+            .smart-building__hero-desc {
+                font-size: 17px;
+            }
+
+            .smart-building__diagram {
+                padding: 40px 20px;
+                margin-bottom: 48px;
+            }
+
+            .smart-building__layer {
+                padding: 18px 20px;
+                gap: 16px;
+            }
+
+            .smart-building__layer-tag {
+                display: none;
+            }
+
+            .smart-building__features {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .smart-building__feature {
+                padding: 32px 24px;
+            }
+
+            .smart-building__cta-text {
+                font-size: 22px;
+            }
+        }
     </style>
 {% endblock %}
 
@@ -233,7 +566,7 @@
             {# --- E-Paper --- #}
             <a href="#" class="category-card">
                 <div class="category-card__bg"
-                     style="background-image: url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=800&fit=crop&q=80'); background-color: #2c3e50;">
+                     style="background-image: url('/images/3.5_IMG_2414.png'); background-color: #2c3e50;">
                 </div>
                 <div class="category-card__overlay"></div>
                 <span class="category-card__accent"></span>
@@ -305,5 +638,145 @@
                 </div>
             </a>
         </div>
+    </section>
+{% endblock %}
+
+{% block _smart_building_section_widget %}
+    <section class="smart-building">
+
+        {# === Hero === #}
+        <div class="smart-building__hero">
+            <div class="smart-building__badge">Smart Building Technology</div>
+            <h2 class="smart-building__hero-title">
+                The intelligent infrastructure<br>
+                for <span>modern buildings</span>
+            </h2>
+            <p class="smart-building__hero-desc">
+                Our IoT ecosystem connects every layer of your building —
+                from physical infrastructure to cloud analytics — into one
+                seamless, real-time platform.
+            </p>
+        </div>
+
+        {# === Architecture Diagram === #}
+        <div class="smart-building__diagram">
+            <p class="smart-building__diagram-title">System Architecture</p>
+
+            <div class="smart-building__layers">
+                {# Cloud Layer #}
+                <div class="smart-building__layer">
+                    <div class="smart-building__layer-icon smart-building__layer-icon--cloud">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#19a6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                    </div>
+                    <div class="smart-building__layer-content">
+                        <p class="smart-building__layer-name">Cloud Platform</p>
+                        <p class="smart-building__layer-desc">Real-time dashboards, analytics, and remote management</p>
+                    </div>
+                    <span class="smart-building__layer-tag">SaaS</span>
+                </div>
+
+                <div class="smart-building__connector"></div>
+
+                {# Gateway Layer #}
+                <div class="smart-building__layer">
+                    <div class="smart-building__layer-icon smart-building__layer-icon--gateway">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d8fdf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    </div>
+                    <div class="smart-building__layer-content">
+                        <p class="smart-building__layer-name">Edge Gateway</p>
+                        <p class="smart-building__layer-desc">On-premise data aggregation with local processing power</p>
+                    </div>
+                    <span class="smart-building__layer-tag">Edge</span>
+                </div>
+
+                <div class="smart-building__connector"></div>
+
+                {# Network Layer #}
+                <div class="smart-building__layer">
+                    <div class="smart-building__layer-icon smart-building__layer-icon--network">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a7ca5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <div class="smart-building__layer-content">
+                        <p class="smart-building__layer-name">Mesh Network</p>
+                        <p class="smart-building__layer-desc">UWB &amp; BLE mesh for centimeter-level indoor positioning</p>
+                    </div>
+                    <span class="smart-building__layer-tag">UWB / BLE</span>
+                </div>
+
+                <div class="smart-building__connector"></div>
+
+                {# Device Layer #}
+                <div class="smart-building__layer">
+                    <div class="smart-building__layer-icon smart-building__layer-icon--devices">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#214061" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                    </div>
+                    <div class="smart-building__layer-content">
+                        <p class="smart-building__layer-name">Devices &amp; Sensors</p>
+                        <p class="smart-building__layer-desc">Beacons, anchors, e-paper displays, temperature &amp; humidity sensors</p>
+                    </div>
+                    <span class="smart-building__layer-tag">IoT</span>
+                </div>
+
+                <div class="smart-building__connector"></div>
+
+                {# Infrastructure Layer #}
+                <div class="smart-building__layer">
+                    <div class="smart-building__layer-icon smart-building__layer-icon--infrastructure">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4a6a80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div class="smart-building__layer-content">
+                        <p class="smart-building__layer-name">Building Infrastructure</p>
+                        <p class="smart-building__layer-desc">Physical installation: rooms, floors, zones, and asset mapping</p>
+                    </div>
+                    <span class="smart-building__layer-tag">Physical</span>
+                </div>
+            </div>
+        </div>
+
+        {# === Key Features === #}
+        <div class="smart-building__features">
+            <div class="smart-building__feature">
+                <div class="smart-building__feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <h3 class="smart-building__feature-title">Real-Time Tracking</h3>
+                <p class="smart-building__feature-desc">
+                    Track assets, people, and equipment with centimeter precision
+                    using UWB anchor infrastructure.
+                </p>
+            </div>
+
+            <div class="smart-building__feature">
+                <div class="smart-building__feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <h3 class="smart-building__feature-title">E-Paper Signage</h3>
+                <p class="smart-building__feature-desc">
+                    Dynamic room labels, wayfinding displays, and status boards —
+                    all wirelessly updated in real time.
+                </p>
+            </div>
+
+            <div class="smart-building__feature">
+                <div class="smart-building__feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3 class="smart-building__feature-title">Secure by Design</h3>
+                <p class="smart-building__feature-desc">
+                    End-to-end encrypted communication with enterprise-grade
+                    access control and audit logging.
+                </p>
+            </div>
+        </div>
+
+        {# === CTA === #}
+        <div class="smart-building__cta">
+            <p class="smart-building__cta-text">Ready to make your building intelligent?</p>
+            <a href="#" class="smart-building__cta-btn">
+                Get started
+                <span class="smart-building__cta-btn-arrow">&rarr;</span>
+            </a>
+        </div>
+
     </section>
 {% endblock %}
