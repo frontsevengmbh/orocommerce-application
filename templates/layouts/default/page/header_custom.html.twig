@@ -96,5 +96,50 @@
         .page-header .logo-img {
             object-fit: contain;
         }
+
+        /* =============================================
+           Spot7 Dashboard Customization
+           Quick Access Menu + Scorecards
+           ============================================= */
+
+        /* --- Dashboard Quick Access Menu (My Profile, Order History, etc.) ---
+             #214061 leicht verblasst (85% Deckkraft) --- */
+        .dashboard-menu__link {
+            background-color: rgba(33, 64, 97, 0.85);
+        }
+
+        .dashboard-menu__link:hover,
+        .dashboard-menu__link:focus {
+            background-color: rgba(33, 64, 97, 1);
+        }
+
+        /* --- Dashboard Scorecards (Users, Shopping Lists, Open RFQs) ---
+             #214061 staerker verblasst (20% Deckkraft) --- */
+        .dashboard-scorecards-container {
+            background-color: rgba(33, 64, 97, 0.12);
+            border-color: rgba(33, 64, 97, 0.3);
+        }
+
+        .dashboard-scorecard-link__metric {
+            color: #214061;
+        }
+
+        .dashboard-scorecard-link__label {
+            color: rgba(33, 64, 97, 0.75);
+        }
+
+        .dashboard-scorecard-link:hover {
+            background-color: rgba(33, 64, 97, 0.85);
+        }
+
+        .dashboard-scorecard-link:hover .dashboard-scorecard-link__metric,
+        .dashboard-scorecard-link:hover .dashboard-scorecard-link__label {
+            color: #ffffff;
+        }
+
+        /* --- Scorecard Trennlinien --- */
+        .dashboard-scorecards-container__item + .dashboard-scorecards-container__item {
+            border-left-color: rgba(33, 64, 97, 0.2);
+        }
     </style>
 {% endblock %}
