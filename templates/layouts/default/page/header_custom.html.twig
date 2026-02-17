@@ -141,5 +141,73 @@
         .dashboard-scorecards-container__item + .dashboard-scorecards-container__item {
             border-left-color: rgba(33, 64, 97, 0.2);
         }
+
+        /* =============================================
+           Spot7 Sidebar Navigation (Account-Bereich)
+           ============================================= */
+
+        /* --- Aktiver Menüpunkt: linker Balken --- */
+        .primary-menu__item--current {
+            border-left-color: #19a6ff;
+        }
+
+        /* --- Aktiver Menüpunkt: Hintergrund --- */
+        .primary-menu__link--current,
+        .primary-menu__item--current .primary-menu__link {
+            background-color: #d3f3ff;
+            color: #19a6ff;
+        }
+
+        /* --- Hover auf Menüpunkte --- */
+        .primary-menu__link:hover {
+            background-color: rgba(25, 166, 255, 0.08);
+            color: #19a6ff;
+        }
+
+        /* --- Breadcrumb-Links im Account-Bereich --- */
+        .breadcrumbs__link {
+            color: #19a6ff;
+        }
+
+        /* =============================================
+           Spot7 Customer Dropdown Menu
+           ============================================= */
+
+        /* --- Aktiver Menuepunkt im Kunden-Dropdown: Textfarbe + linker Balken --- */
+        .dropdown-item--active {
+            color: #19a6ff;
+        }
+
+        .dropdown-item--active:before {
+            background-color: #19a6ff;
+        }
+
+        /* --- Hintergrund des aktiven Menuepunkts --- */
+        .dropdown-item--active {
+            background-color: #d3f3ff;
+        }
+
+        /* =============================================
+           Spot7 Shopping List Dropdown
+           ============================================= */
+
+        /* --- "Neue Liste erstellen" Button: weisser Text auf Spot7-Blau --- */
+        .header-row__dropdown-footer .btn.btn--full {
+            background-color: #19a6ff;
+            color: #ffffff;
+            border-color: #19a6ff;
+        }
+
+        .header-row__dropdown-footer .btn.btn--full:hover,
+        .header-row__dropdown-footer .btn.btn--full:focus {
+            background-color: #19a6ff;
+            color: #ffffff;
+            border-color: #19a6ff;
+        }
+
+        /* --- Ausgewaehlte Shopping List (Default): Textfarbe --- */
+        .shopping-list-dropdown__item--default .shopping-list-dropdown__name {
+            color: #19a6ff;
+        }
     </style>
 {% endblock %}
