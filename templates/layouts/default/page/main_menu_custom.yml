@@ -1,0 +1,7 @@
+layout:
+    actions:
+        # --- Hamburger-Menü Logo auf Spot7 Favicon ändern ---
+        - '@setOption':
+            id: main_menu_trigger
+            optionName: vars.logoSrc
+            optionValue: '/bundles/orofrontend/default/favicons/favicon-96x96.png'
