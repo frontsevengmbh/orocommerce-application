@@ -1,0 +1,100 @@
+{% block _header_custom_styles_widget %}
+    <style>
+        /* =============================================
+           Spot7 Header Customization
+           Primaerfarbe: Weiss | Sekundaerfarbe: #19a6ff
+           ============================================= */
+
+        :root {
+            /* Header-Hintergrund: Weiss */
+            --page-header-background-color: #ffffff;
+
+            /* Primaerfarben auf #19a6ff setzen */
+            --primary-main: #19a6ff;
+            --primary-hover: #0d8fdf;
+            --primary-active: #0a7bc4;
+            --primary-light: #e6f4ff;
+        }
+
+        /* --- Header: Weisser Hintergrund + dunkler Text --- */
+        .page-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Middlebar (Logo-Zeile): dunkle Schriftfarbe */
+        .page-header .middlebar,
+        .page-header .middlebar a,
+        .page-header .middlebar__right,
+        .page-header .middlebar__left {
+            color: #1a1a1a;
+        }
+
+        /* Topbar: dunkle Schriftfarbe */
+        .page-header .topbar,
+        .page-header .topbar a {
+            color: #1a1a1a;
+        }
+
+        /* Navigation-Links im Header */
+        .page-header .navigation-menu--inverse .navigation-menu__link {
+            color: #1a1a1a;
+        }
+
+        .page-header .navigation-menu--inverse .navigation-menu__link:hover {
+            color: #19a6ff;
+        }
+
+        /* --- Buttons im Header: von inverse/dunkel auf hell umstellen --- */
+        .page-header .btn {
+            color: #1a1a1a;
+        }
+
+        .page-header .btn:hover,
+        .page-header .btn:focus {
+            color: #19a6ff;
+        }
+
+        /* Hamburger-Menu-Trigger */
+        .page-header .main-menu-trigger {
+            color: #1a1a1a;
+        }
+
+        .page-header .main-menu-trigger:hover {
+            color: #19a6ff;
+        }
+
+        /* --- Icons im Header: dunkle Farbe --- */
+        .page-header .theme-icon {
+            color: #1a1a1a;
+        }
+
+        .page-header .btn:hover .theme-icon,
+        .page-header .btn:focus .theme-icon {
+            color: #19a6ff;
+        }
+
+        /* --- Suchfeld Anpassung --- */
+        .page-header .search-widget__input {
+            border-color: #d0d0d0;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+        }
+
+        .page-header .search-widget__input:focus {
+            border-color: #19a6ff;
+            background-color: #ffffff;
+        }
+
+        /* --- Logo Groesse anpassen --- */
+        .page-header .logo {
+            max-width: 180px;
+            max-height: 50px;
+        }
+
+        .page-header .logo-img {
+            object-fit: contain;
+        }
+    </style>
+{% endblock %}

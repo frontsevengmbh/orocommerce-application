@@ -1,0 +1,132 @@
+{% block _footer_custom_styles_widget %}
+    <style>
+        /* =============================================
+           Spot7 Footer Customization
+           Hintergrund: #214061 | Text: Weiss
+           ============================================= */
+
+        /* --- Footer Hintergrund --- */
+        .page-footer {
+            background: #214061;
+        }
+
+        /* --- Copyright: weisser Text --- */
+        .page-footer .copyright {
+            color: #ffffff;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* --- Footer Navigation Titel (Information, My Account) --- */
+        .page-footer .information-nav__title {
+            color: #ffffff;
+        }
+
+        /* --- Footer Navigation Links --- */
+        .page-footer a.information-nav__item-content {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .page-footer a.information-nav__item-content:hover {
+            color: #19a6ff;
+        }
+
+        .page-footer span.information-nav__item-content {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* --- Footer Side (Kontaktinfo) --- */
+        .page-footer .page-footer-container__side,
+        .page-footer .page-footer-container__side a,
+        .page-footer #sales-contact-info,
+        .page-footer #sales-contact-info .h6,
+        .page-footer #sales-contact-info .information-nav__title {
+            color: #ffffff;
+        }
+
+        .page-footer #sales-contact-info a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .page-footer #sales-contact-info a:hover {
+            color: #19a6ff;
+        }
+
+        /* --- Accordion Trigger (Mobile) --- */
+        .page-footer .accordion-group__trigger {
+            color: #ffffff;
+        }
+
+        /* --- Footer Logo zentriert --- */
+        .footer-logo {
+            text-align: center;
+            padding: 32px 0 16px;
+        }
+
+        .footer-logo img {
+            max-width: 180px;
+            height: auto;
+        }
+    </style>
+{% endblock %}
+
+{% block _footer_menu_widget %}
+    {% set attr = layout_attr_defaults(attr, {
+        '~class': ' information-nav__list'
+    }) %}
+    {% set child_attr = layout_attr_defaults(child_attr, {
+        '~class': ' information-nav__item'
+    }) %}
+    {% set link_attr = layout_attr_defaults(link_attr, {
+        '~class': ' information-nav__item-content no-decoration'
+    }) %}
+
+    {% if item.displayed and item.extras.isAllowed %}
+        {% apply spaceless %}
+            {% for child in item.children %}
+                {# --- "Why Buy From Us" Spalte ausblenden --- #}
+                {% if child.name != 'why_buy_from_us' and child.displayed and child.extras.isAllowed %}
+                    {% set label = child.extras.custom is defined and child.extras.custom == true ? child.label : child.label|trans %}
+                    {% set collapseOptions = {
+                        viewport: 'tablet-small',
+                        view: 'orofrontend/default/js/app/views/collapse-view',
+                        toggleAttrs: {
+                            'class': 'accordion-group__trigger',
+                            'data-text': label,
+                            'data-icon': 'chevron-down'
+                        },
+                        collapseAttrs: {
+                            'class': 'information-nav__collapse collapse'
+                        }
+                    } %}
+                    <section class="information-nav information-nav--responsive">
+                        <div data-page-component-module="oroui/js/app/components/viewport-component"
+                             data-page-component-options="{{ collapseOptions|json_encode() }}">
+                            {% import '@OroUI/layouts/renderIcon.html.twig' as renderIcon %}
+                            {% set icon = child.extras.icon|default(null)%}
+                            {%- apply spaceless -%}
+                            <p class="h6 information-nav__title">
+                                {%- if icon -%}
+                                    {{ renderIcon.icon({name: icon}) }}
+                                {%- endif -%}
+                                {{- label -}}
+                            </p>
+                            {%- endapply -%}
+                            {% set item = child %}
+                            {{ block('menu_widget') }}
+                        </div>
+                    </section>
+                {% endif %}
+            {% endfor %}
+        {% endapply %}
+    {% endif %}
+{% endblock %}
+
+{% block _footer_logo_widget %}
+    <div class="footer-logo">
+        <img src="/images/logo_spot7_white.svg" alt="Spot7" />
+    </div>
+{% endblock %}
+
+{% block _copyright_widget %}
+    <p class="copyright" style="color: #ffffff;">&copy; Spot7. All Rights Reserved</p>
+{% endblock %}

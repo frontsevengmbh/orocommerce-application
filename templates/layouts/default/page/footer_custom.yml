@@ -1,0 +1,18 @@
+layout:
+    actions:
+        - '@setBlockTheme':
+            themes: 'footer_custom.html.twig'
+
+        # --- Logo im Footer (zentriert, oben) ---
+        - '@add':
+            id: footer_logo
+            parentId: page_footer
+            blockType: block
+            prepend: true
+
+        # --- Custom CSS Block fuer Footer-Farben ---
+        - '@add':
+            id: footer_custom_styles
+            parentId: head
+            blockType: block
+            prepend: false

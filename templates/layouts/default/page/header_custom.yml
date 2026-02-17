@@ -1,0 +1,22 @@
+layout:
+    actions:
+        - '@setBlockTheme':
+            themes: 'header_custom.html.twig'
+
+        # --- Logo ersetzen ---
+        - '@setOption':
+            id: logo
+            optionName: src
+            optionValue: '/images/logo_spot7.png'
+
+        - '@setOption':
+            id: logo
+            optionName: vars.logo_small
+            optionValue: '/images/logo_spot7.png'
+
+        # --- Custom CSS Block fuer Header-Farben ---
+        - '@add':
+            id: header_custom_styles
+            parentId: head
+            blockType: block
+            prepend: false
