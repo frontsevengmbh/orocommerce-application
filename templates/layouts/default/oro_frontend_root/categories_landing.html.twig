@@ -85,6 +85,13 @@
             transform: scale(1.08);
         }
 
+        /* --- Sensor-Bild Zentrierung (Bild ist im PNG leicht links) --- */
+        .category-card--sensors .category-card__bg,
+        .category-card--sensor .category-card__bg {
+            background-position: 60% center;
+            background-size: 50%;
+        }
+
         /* --- Gradient Overlay --- */
         .category-card__overlay {
             position: absolute;
@@ -626,7 +633,7 @@
                 {% endif %}
 
                 <a href="{{ path('oro_product_frontend_product_index', { categoryId: cat.id, includeSubcategories: 1 }) }}"
-                   class="category-card">
+                   class="category-card category-card--{{ cat.title|lower|replace({' ': '-'}) }}">
                     <div class="category-card__bg"
                          style="{% if card_image %}background-image: url('{{ card_image }}');{% endif %} background-color: #214061;">
                     </div>
