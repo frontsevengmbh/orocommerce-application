@@ -1,0 +1,45 @@
+oro_frontend:
+    home_page:
+        title: 'BOUTIQUE'
+        welcome: 'spot7'
+
+# --- Spot7 Storefront Traductions Français ---
+spot7:
+    landing:
+        title_prefix: 'Explorez nos produits'
+        title_highlight: 'et trouvez la solution parfaite'
+        subtitle: 'Composants smart building pour chaque cas d''utilisation — du positionnement intérieur à l''affichage numérique.'
+        card_cta: 'Explorer'
+        empty_state: 'Aucune catégorie disponible pour le moment. Créez des catégories dans le panneau d''administration pour les afficher ici.'
+    smart_building:
+        badge: 'Technologie Smart Building'
+        hero_title_line1: 'L''infrastructure intelligente'
+        hero_title_line2: 'pour les'
+        hero_title_highlight: 'bâtiments modernes'
+        hero_desc: 'Notre écosystème IoT connecte chaque couche de votre bâtiment — de l''infrastructure physique à l''analyse cloud — en une plateforme temps réel transparente.'
+        diagram_title: 'Architecture du système'
+        layer_cloud_name: 'Plateforme cloud spot7'
+        layer_cloud_desc: 'Tableaux de bord en temps réel, analyses et gestion à distance'
+        layer_cloud_tag: 'Logiciel'
+        layer_gateway_name: 'Passerelle Wirepas'
+        layer_gateway_desc: 'Agrégation de données sur site avec puissance de calcul locale'
+        layer_gateway_tag: 'Passerelle'
+        layer_network_name: 'Réseau maillé'
+        layer_network_desc: 'Maillage Wirepas pour le positionnement intérieur au centimètre près'
+        layer_network_tag: 'Wirepas'
+        layer_devices_name: 'Appareils et capteurs'
+        layer_devices_desc: 'Balises, ancres, affichages e-paper, capteurs de température et d''humidité'
+        layer_devices_tag: 'IoT'
+        layer_infra_name: 'Infrastructure du bâtiment'
+        layer_infra_desc: 'Installation physique : pièces, étages, zones et cartographie des actifs'
+        layer_infra_tag: 'Physique'
+        feature_tracking_title: 'Suivi en temps réel'
+        feature_tracking_desc: 'Suivez les actifs, les personnes et les équipements avec une précision centimétrique grâce à l''infrastructure d''ancres UWB.'
+        feature_epaper_title: 'Signalétique E-Paper'
+        feature_epaper_desc: 'Étiquettes de salle dynamiques, affichages de guidage et tableaux de statut — tous mis à jour sans fil en temps réel.'
+        feature_security_title: 'Sécurisé par conception'
+        feature_security_desc: 'Communication chiffrée de bout en bout avec contrôle d''accès de niveau entreprise et journalisation d''audit.'
+        cta_text: 'Prêt à rendre votre bâtiment intelligent ?'
+        cta_button: 'Commencer'
+    footer:
+        copyright: '© spot7. Tous droits réservés'
