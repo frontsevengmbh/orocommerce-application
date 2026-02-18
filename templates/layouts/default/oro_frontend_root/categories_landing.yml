@@ -15,6 +15,9 @@ layout:
             items:
                 category_cards_section:
                     blockType: container
+                    options:
+                        vars:
+                            categories: '=data["featured_categories"].getAll()'
                 smart_building_section:
                     blockType: container
             tree:

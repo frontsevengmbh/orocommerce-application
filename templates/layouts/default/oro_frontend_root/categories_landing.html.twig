@@ -170,6 +170,27 @@
             transform: scale(1);
         }
 
+        /* --- Short Description --- */
+        .category-card__short {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 0 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* --- Empty State --- */
+        .category-cards__empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 24px;
+            color: #86868b;
+            font-size: 16px;
+        }
+
         /* =============================================
            Responsive
            ============================================= */
@@ -564,6 +585,29 @@
 {% endblock %}
 
 {% block _category_cards_section_widget %}
+    {# =============================================
+       Dynamische Kategorie-Karten: Werden automatisch aus dem
+       OroCommerce Admin Panel (Master Catalog) geladen.
+       Neue Kategorien im Admin anlegen → erscheinen hier automatisch.
+       categories wird via Layout-YAML injiziert (categories_landing.yml)
+
+       Fallback-Bilder: Wenn im Admin kein "Small Image" hochgeladen
+       ist, wird ein Standard-Produktbild anhand des Namens verwendet.
+       ============================================= #}
+
+    {# --- Fallback-Bilder fuer bekannte Kategorien --- #}
+    {% set fallback_images = {
+        'e-paper':          '/images/spot7label_Standard_8-23.png',
+        'beacons':          '/images/spot7nano_Standard_8-23.png',
+        'anchors':          '/images/spot7anchor_Standard_8-23.png',
+        'anchor':           '/images/spot7anchor_Standard_8-23.png',
+        'sensors':          '/images/doorsensor.png',
+        'sensor':           '/images/doorsensor.png',
+        'wirepas gateway':  '/images/vortext_gehauese_01.png',
+        'gateway':          '/images/vortext_gehauese_01.png',
+        'gateways':         '/images/vortext_gehauese_01.png'
+    } %}
+
     <section class="category-cards">
         <div class="category-cards__heading">
             <h2 class="category-cards__title">Explore our Products <span>and choose which one to buy</span></h2>
@@ -571,80 +615,39 @@
         </div>
 
         <div class="category-cards__grid">
-            {# --- E-Paper --- #}
-            <a href="#" class="category-card">
-                <div class="category-card__bg"
-                     style="background-image: url('/images/spot7label_Standard_8-23.png'); background-color: #214061;">
-                </div>
-                <div class="category-card__overlay"></div>
-                <span class="category-card__accent"></span>
-                <div class="category-card__content">
-                    <h3 class="category-card__name">E-Paper</h3>
-                    <span class="category-card__cta">
-                        Explore <span class="category-card__cta-arrow">&rarr;</span>
-                    </span>
-                </div>
-            </a>
+            {% for cat in categories %}
+                {# Bild-Prioritaet: 1) Admin Small Image  2) Fallback nach Name  3) kein Bild #}
+                {% if cat.small_image %}
+                    {% set card_image = file_url(cat.small_image) %}
+                {% elseif fallback_images[cat.title|lower] is defined %}
+                    {% set card_image = fallback_images[cat.title|lower] %}
+                {% else %}
+                    {% set card_image = null %}
+                {% endif %}
 
-            {# --- Beacons --- #}
-            <a href="#" class="category-card">
-                <div class="category-card__bg"
-                     style="background-image: url('/images/spot7nano_Standard_8-23.png'); background-color: #214061;">
+                <a href="{{ path('oro_product_frontend_product_index', { categoryId: cat.id, includeSubcategories: 1 }) }}"
+                   class="category-card">
+                    <div class="category-card__bg"
+                         style="{% if card_image %}background-image: url('{{ card_image }}');{% endif %} background-color: #214061;">
+                    </div>
+                    <div class="category-card__overlay"></div>
+                    <span class="category-card__accent"></span>
+                    <div class="category-card__content">
+                        <h3 class="category-card__name">{{ cat.title }}</h3>
+                        {% if cat.short %}
+                            <p class="category-card__short">{{ cat.short }}</p>
+                        {% endif %}
+                        <span class="category-card__cta">
+                            Explore <span class="category-card__cta-arrow">&rarr;</span>
+                        </span>
+                    </div>
+                </a>
+            {% else %}
+                {# Fallback wenn noch keine Kategorien angelegt sind #}
+                <div class="category-cards__empty">
+                    <p>No categories available yet. Create categories in the Admin Panel to display them here.</p>
                 </div>
-                <div class="category-card__overlay"></div>
-                <span class="category-card__accent"></span>
-                <div class="category-card__content">
-                    <h3 class="category-card__name">Beacons</h3>
-                    <span class="category-card__cta">
-                        Explore <span class="category-card__cta-arrow">&rarr;</span>
-                    </span>
-                </div>
-            </a>
-
-            {# --- Anchors --- #}
-            <a href="#" class="category-card">
-                <div class="category-card__bg"
-                     style="background-image: url('/images/spot7anchor_Standard_8-23.png'); background-color: #214061;">
-                </div>
-                <div class="category-card__overlay"></div>
-                <span class="category-card__accent"></span>
-                <div class="category-card__content">
-                    <h3 class="category-card__name">Anchors</h3>
-                    <span class="category-card__cta">
-                        Explore <span class="category-card__cta-arrow">&rarr;</span>
-                    </span>
-                </div>
-            </a>
-
-            {# --- Sensors --- #}
-            <a href="#" class="category-card">
-                <div class="category-card__bg"
-                     style="background-image: url('/images/doorsensor.png'); background-color: #214061;">
-                </div>
-                <div class="category-card__overlay"></div>
-                <span class="category-card__accent"></span>
-                <div class="category-card__content">
-                    <h3 class="category-card__name">Sensors</h3>
-                    <span class="category-card__cta">
-                        Explore <span class="category-card__cta-arrow">&rarr;</span>
-                    </span>
-                </div>
-            </a>
-
-            {# --- Wirepas Gateway --- #}
-            <a href="#" class="category-card">
-                <div class="category-card__bg"
-                     style="background-image: url('/images/vortext_gehauese_01.png'); background-color: #214061;">
-                </div>
-                <div class="category-card__overlay"></div>
-                <span class="category-card__accent"></span>
-                <div class="category-card__content">
-                    <h3 class="category-card__name">Wirepas Gateway</h3>
-                    <span class="category-card__cta">
-                        Explore <span class="category-card__cta-arrow">&rarr;</span>
-                    </span>
-                </div>
-            </a>
+            {% endfor %}
         </div>
     </section>
 {% endblock %}
