@@ -1,9 +1,17 @@
 {% block _category_cards_styles_widget %}
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@400;600;700;800;900&display=swap');
+
         /* =============================================
            Spot7 Category Cards – Felix-Style Landing
            Image backgrounds with text overlay
            ============================================= */
+
+        /* --- Globale Schriftart: Lexend Exa fuer alle Headlines --- */
+        .category-cards h1, .category-cards h2, .category-cards h3,
+        .smart-building h1, .smart-building h2, .smart-building h3 {
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
+        }
 
         .category-cards {
             max-width: 1400px;
@@ -17,12 +25,13 @@
         }
 
         .category-cards__title {
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
             font-size: 52px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
+            font-weight: 900 !important;
+            letter-spacing: -0.04em;
             color: #1d1d1f;
-            margin: 0 0 12px;
-            line-height: 1.08;
+            margin: 0 0 16px;
+            line-height: 1.1;
         }
 
         .category-cards__title span {
@@ -33,9 +42,12 @@
         }
 
         .category-cards__subtitle {
-            font-size: 18px;
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
+            font-size: 16px;
             color: #86868b;
-            font-weight: 400;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            line-height: 1.6;
             margin: 0;
         }
 
@@ -123,15 +135,17 @@
         }
 
         .category-card__name {
-            font-size: 24px;
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
+            font-size: 22px;
             font-weight: 700;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
             line-height: 1.2;
             margin: 0 0 8px;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .category-card__cta {
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -286,10 +300,11 @@
         }
 
         .smart-building__hero-title {
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
             font-size: 52px;
             font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.08;
+            letter-spacing: -0.05em;
+            line-height: 1.05;
             color: #1d1d1f;
             margin: 0 0 20px;
         }
@@ -399,25 +414,31 @@
         }
 
         .smart-building__layer-name {
+            font-family: 'Lexend Exa', system-ui, sans-serif !important;
             font-size: 17px;
             font-weight: 600;
+            letter-spacing: -0.02em;
             color: #1d1d1f;
             margin: 0 0 4px;
         }
 
         .smart-building__layer-desc {
+            font-family: 'Lexend Exa', system-ui, sans-serif !important;
             font-size: 14px;
             color: #86868b;
             margin: 0;
             line-height: 1.4;
+            letter-spacing: -0.01em;
         }
 
         .smart-building__layer-tag {
             flex-shrink: 0;
             padding: 4px 12px;
             border-radius: 8px;
+            font-family: 'Lexend Exa', system-ui, sans-serif !important;
             font-size: 12px;
             font-weight: 600;
+            letter-spacing: -0.01em;
             background: rgba(25, 166, 255, 0.08);
             color: #19a6ff;
         }
@@ -555,8 +576,9 @@
         }
 
         .smart-building__feature-title {
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
             font-size: 20px;
-            font-weight: 600;
+            font-weight: 700;
             color: #1d1d1f;
             margin: 0 0 10px;
         }
@@ -575,14 +597,16 @@
         }
 
         .smart-building__cta-text {
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
             font-size: 28px;
-            font-weight: 600;
+            font-weight: 700;
             color: #1d1d1f;
             margin: 0 0 24px;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.03em;
         }
 
         .smart-building__cta-btn {
+            font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -772,10 +796,10 @@
 
             {# --- Animated Building Cross-Section (full width) --- #}
             <div class="smart-building__building-visual">
-                <svg class="building-svg" viewBox="0 0 700 385" xmlns="http://www.w3.org/2000/svg">
+                <svg class="building-svg" viewBox="0 0 760 385" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <clipPath id="bClip">
-                            <rect x="100" y="90" width="500" height="265" rx="12"/>
+                            <rect x="100" y="90" width="560" height="265" rx="12"/>
                         </clipPath>
                         <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
                             <stop offset="0%"   stop-color="#19a6ff" stop-opacity="0.09"/>
@@ -798,7 +822,7 @@
                     <g class="building-cloud-group">
                         <path d="M306 56 C304 44 313 34 326 34 C329 25 338 19 349 19 C360 19 369 25 372 34 C381 33 388 40 386 49 C384 57 376 61 367 59 L315 59 C308 59 304 56 306 50 Z"
                               fill="url(#cloudGrad)" opacity="0.88"/>
-                        <text x="346" y="43" fill="white" font-size="8" font-family="system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.8">CLOUD</text>
+                        <text x="346" y="43" fill="white" font-size="8" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.8">CLOUD</text>
                         <circle cx="322" cy="51" r="2" fill="white" opacity="0.55"/>
                         <circle cx="346" cy="53" r="2" fill="white" opacity="0.55"/>
                         <circle cx="366" cy="50" r="2" fill="white" opacity="0.55"/>
@@ -808,15 +832,15 @@
                     <line x1="346" y1="60" x2="346" y2="90" stroke="#19a6ff" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.55"/>
 
                     {# Building body #}
-                    <rect x="100" y="90" width="500" height="265" rx="12" fill="#f8fafc"/>
+                    <rect x="100" y="90" width="560" height="265" rx="12" fill="#f8fafc"/>
 
                     {# Floor fills + accent strips (clipped) #}
                     <g clip-path="url(#bClip)">
-                        <rect x="100" y="90"  width="500" height="53" fill="rgba(25,166,255,0.07)"/>
-                        <rect x="100" y="143" width="500" height="53" fill="rgba(13,143,223,0.05)"/>
-                        <rect x="100" y="196" width="500" height="53" fill="rgba(58,124,165,0.05)"/>
-                        <rect x="100" y="249" width="500" height="53" fill="rgba(33,64,97,0.04)"/>
-                        <rect x="100" y="302" width="500" height="53" fill="rgba(74,106,128,0.04)"/>
+                        <rect x="100" y="90"  width="560" height="53" fill="rgba(25,166,255,0.07)"/>
+                        <rect x="100" y="143" width="560" height="53" fill="rgba(13,143,223,0.05)"/>
+                        <rect x="100" y="196" width="560" height="53" fill="rgba(58,124,165,0.05)"/>
+                        <rect x="100" y="249" width="560" height="53" fill="rgba(33,64,97,0.04)"/>
+                        <rect x="100" y="302" width="560" height="53" fill="rgba(74,106,128,0.04)"/>
 
                         {# Left accent strips #}
                         <rect x="100" y="90"  width="5" height="53" fill="#19a6ff"/>
@@ -826,69 +850,69 @@
                         <rect x="100" y="302" width="5" height="53" fill="#4a6a80"/>
 
                         {# Floor dividers #}
-                        <line x1="100" y1="143" x2="600" y2="143" stroke="#e2e8f0" stroke-width="1"/>
-                        <line x1="100" y1="196" x2="600" y2="196" stroke="#e2e8f0" stroke-width="1"/>
-                        <line x1="100" y1="249" x2="600" y2="249" stroke="#e2e8f0" stroke-width="1"/>
-                        <line x1="100" y1="302" x2="600" y2="302" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="100" y1="143" x2="660" y2="143" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="100" y1="196" x2="660" y2="196" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="100" y1="249" x2="660" y2="249" stroke="#e2e8f0" stroke-width="1"/>
+                        <line x1="100" y1="302" x2="660" y2="302" stroke="#e2e8f0" stroke-width="1"/>
                     </g>
 
                     {# Building border #}
-                    <rect x="100" y="90" width="500" height="265" rx="12" fill="none" stroke="#d4e0ec" stroke-width="1.5"/>
+                    <rect x="100" y="90" width="560" height="265" rx="12" fill="none" stroke="#d4e0ec" stroke-width="1.5"/>
 
                     {# ---- Floor 1: Cloud Platform ---- #}
                     <svg x="114" y="105" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19a6ff" stroke-width="2" stroke-linecap="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-                    <text x="146" y="116" fill="#1d1d1f" font-size="13" font-family="system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_cloud_name'|trans }}</text>
-                    <text x="146" y="131" fill="#86868b" font-size="11" font-family="system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_cloud_desc'|trans }}</text>
-                    <rect x="508" y="108" width="72" height="20" rx="10" fill="rgba(25,166,255,0.10)"/>
-                    <text x="544" y="122" fill="#19a6ff" font-size="10" font-family="system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_cloud_tag'|trans }}</text>
-                    <circle class="building-status-dot"    cx="494" cy="116" r="4" fill="#22c55e"/>
+                    <text x="146" y="116" fill="#1d1d1f" font-size="13" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_cloud_name'|trans }}</text>
+                    <text x="146" y="131" fill="#86868b" font-size="11" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_cloud_desc'|trans }}</text>
+                    <rect x="568" y="108" width="72" height="20" rx="10" fill="rgba(25,166,255,0.10)"/>
+                    <text x="604" y="122" fill="#19a6ff" font-size="10" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_cloud_tag'|trans }}</text>
+                    <circle class="building-status-dot"    cx="554" cy="116" r="4" fill="#22c55e"/>
 
                     {# ---- Floor 2: Gateway ---- #}
                     <svg x="114" y="158" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0d8fdf" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                    <text x="146" y="169" fill="#1d1d1f" font-size="13" font-family="system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_gateway_name'|trans }}</text>
-                    <text x="146" y="184" fill="#86868b" font-size="11" font-family="system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_gateway_desc'|trans }}</text>
-                    <rect x="508" y="161" width="72" height="20" rx="10" fill="rgba(13,143,223,0.10)"/>
-                    <text x="544" y="175" fill="#0d8fdf" font-size="10" font-family="system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_gateway_tag'|trans }}</text>
-                    <circle class="building-status-dot s2" cx="494" cy="169" r="4" fill="#22c55e"/>
+                    <text x="146" y="169" fill="#1d1d1f" font-size="13" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_gateway_name'|trans }}</text>
+                    <text x="146" y="184" fill="#86868b" font-size="11" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_gateway_desc'|trans }}</text>
+                    <rect x="568" y="161" width="72" height="20" rx="10" fill="rgba(13,143,223,0.10)"/>
+                    <text x="604" y="175" fill="#0d8fdf" font-size="10" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_gateway_tag'|trans }}</text>
+                    <circle class="building-status-dot s2" cx="554" cy="169" r="4" fill="#22c55e"/>
 
                     {# ---- Floor 3: Mesh Network (with signal rings) ---- #}
                     <svg x="114" y="211" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3a7ca5" stroke-width="2" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                    <text x="146" y="222" fill="#1d1d1f" font-size="13" font-family="system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_network_name'|trans }}</text>
-                    <text x="146" y="237" fill="#86868b" font-size="11" font-family="system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_network_desc'|trans }}</text>
-                    <rect x="508" y="214" width="72" height="20" rx="10" fill="rgba(58,124,165,0.10)"/>
-                    <text x="544" y="228" fill="#3a7ca5" font-size="10" font-family="system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_network_tag'|trans }}</text>
+                    <text x="146" y="222" fill="#1d1d1f" font-size="13" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_network_name'|trans }}</text>
+                    <text x="146" y="237" fill="#86868b" font-size="11" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_network_desc'|trans }}</text>
+                    <rect x="568" y="214" width="72" height="20" rx="10" fill="rgba(58,124,165,0.10)"/>
+                    <text x="604" y="228" fill="#3a7ca5" font-size="10" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_network_tag'|trans }}</text>
                     <circle class="building-signal-ring"    cx="125" cy="222" r="5" fill="none" stroke="#3a7ca5" stroke-width="1.5"/>
                     <circle class="building-signal-ring r2" cx="125" cy="222" r="5" fill="none" stroke="#3a7ca5" stroke-width="1.5"/>
                     <circle class="building-signal-ring r3" cx="125" cy="222" r="5" fill="none" stroke="#3a7ca5" stroke-width="1.5"/>
-                    <circle class="building-status-dot s3" cx="494" cy="222" r="4" fill="#22c55e"/>
+                    <circle class="building-status-dot s3" cx="554" cy="222" r="4" fill="#22c55e"/>
 
                     {# ---- Floor 4: Devices & Sensors ---- #}
                     <svg x="114" y="264" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#214061" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/></svg>
-                    <text x="146" y="275" fill="#1d1d1f" font-size="13" font-family="system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_devices_name'|trans }}</text>
-                    <text x="146" y="290" fill="#86868b" font-size="11" font-family="system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_devices_desc'|trans }}</text>
-                    <rect x="508" y="267" width="72" height="20" rx="10" fill="rgba(33,64,97,0.10)"/>
-                    <text x="544" y="281" fill="#214061" font-size="10" font-family="system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_devices_tag'|trans }}</text>
-                    <circle class="building-status-dot s4" cx="494" cy="275" r="4" fill="#22c55e"/>
+                    <text x="146" y="275" fill="#1d1d1f" font-size="13" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_devices_name'|trans }}</text>
+                    <text x="146" y="290" fill="#86868b" font-size="11" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_devices_desc'|trans }}</text>
+                    <rect x="568" y="267" width="72" height="20" rx="10" fill="rgba(33,64,97,0.10)"/>
+                    <text x="604" y="281" fill="#214061" font-size="10" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_devices_tag'|trans }}</text>
+                    <circle class="building-status-dot s4" cx="554" cy="275" r="4" fill="#22c55e"/>
 
                     {# ---- Floor 5: Building Infrastructure ---- #}
                     <svg x="114" y="317" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4a6a80" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    <text x="146" y="328" fill="#1d1d1f" font-size="13" font-family="system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_infra_name'|trans }}</text>
-                    <text x="146" y="343" fill="#86868b" font-size="11" font-family="system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_infra_desc'|trans }}</text>
-                    <rect x="508" y="320" width="72" height="20" rx="10" fill="rgba(74,106,128,0.10)"/>
-                    <text x="544" y="334" fill="#4a6a80" font-size="10" font-family="system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_infra_tag'|trans }}</text>
-                    <circle class="building-status-dot s5" cx="494" cy="328" r="4" fill="#22c55e"/>
+                    <text x="146" y="328" fill="#1d1d1f" font-size="13" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="600">{{ 'spot7.smart_building.layer_infra_name'|trans }}</text>
+                    <text x="146" y="343" fill="#86868b" font-size="11" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif">{{ 'spot7.smart_building.layer_infra_desc'|trans }}</text>
+                    <rect x="568" y="320" width="72" height="20" rx="10" fill="rgba(74,106,128,0.10)"/>
+                    <text x="604" y="334" fill="#4a6a80" font-size="10" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.4">{{ 'spot7.smart_building.layer_infra_tag'|trans }}</text>
+                    <circle class="building-status-dot s5" cx="554" cy="328" r="4" fill="#22c55e"/>
 
                     {# Data flow channel (right side, outside building) #}
-                    <line x1="620" y1="92" x2="620" y2="350" stroke="url(#dataLine)" stroke-width="2" opacity="0.4"/>
-                    <polygon points="620,88 615,98 625,98" fill="#19a6ff" opacity="0.5"/>
+                    <line x1="680" y1="92" x2="680" y2="350" stroke="url(#dataLine)" stroke-width="2" opacity="0.4"/>
+                    <polygon points="680,88 675,98 685,98" fill="#19a6ff" opacity="0.5"/>
 
                     {# Animated data dots #}
-                    <circle class="building-data-dot"    cx="620" cy="350" r="4" fill="#19a6ff" opacity="0"/>
-                    <circle class="building-data-dot d2" cx="620" cy="350" r="4" fill="#19a6ff" opacity="0"/>
-                    <circle class="building-data-dot d3" cx="620" cy="350" r="4" fill="#19a6ff" opacity="0"/>
+                    <circle class="building-data-dot"    cx="680" cy="350" r="4" fill="#19a6ff" opacity="0"/>
+                    <circle class="building-data-dot d2" cx="680" cy="350" r="4" fill="#19a6ff" opacity="0"/>
+                    <circle class="building-data-dot d3" cx="680" cy="350" r="4" fill="#19a6ff" opacity="0"/>
 
                     {# DATA FLOW label #}
-                    <text x="636" y="225" fill="#b0bec5" font-size="8" font-family="system-ui,-apple-system,sans-serif" font-weight="600" text-anchor="middle" letter-spacing="1" transform="rotate(90, 636, 225)">DATA FLOW</text>
+                    <text x="696" y="225" fill="#b0bec5" font-size="8" font-family="'Lexend Exa',system-ui,-apple-system,sans-serif" font-weight="600" text-anchor="middle" letter-spacing="1" transform="rotate(90, 696, 225)">DATA FLOW</text>
                 </svg>
             </div>{# end building-visual #}
 
