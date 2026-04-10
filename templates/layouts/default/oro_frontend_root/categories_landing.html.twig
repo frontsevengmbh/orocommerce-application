@@ -24,14 +24,31 @@
             margin-bottom: 48px;
         }
 
+        .category-cards__badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 100px;
+            background: linear-gradient(135deg, rgba(25, 166, 255, 0.12), rgba(33, 64, 97, 0.1));
+            color: #19a6ff;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
         .category-cards__title {
             font-family: 'Lexend Exa', system-ui, -apple-system, sans-serif !important;
-            font-size: 52px;
+            font-size: 52px !important;
             font-weight: 900 !important;
-            letter-spacing: -0.04em;
-            color: #1d1d1f;
-            margin: 0 0 16px;
-            line-height: 1.1;
+            letter-spacing: -0.04em !important;
+            color: #1d1d1f !important;
+            margin: 0 0 16px !important;
+            line-height: 1.1 !important;
+            text-transform: none !important;
+            hyphens: none !important;
+            word-break: normal !important;
+            overflow-wrap: normal !important;
         }
 
         .category-cards__title span {
@@ -731,6 +748,7 @@
 
     <section class="category-cards">
         <div class="category-cards__heading">
+            <div class="category-cards__badge">{{ 'spot7.landing.badge'|trans }}</div>
             <h2 class="category-cards__title">{{ 'spot7.landing.title_prefix'|trans }} <span>{{ 'spot7.landing.title_highlight'|trans }}</span></h2>
             <p class="category-cards__subtitle">{{ 'spot7.landing.subtitle'|trans }}</p>
         </div>

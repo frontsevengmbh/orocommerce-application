@@ -6,6 +6,7 @@ oro_frontend:
 # --- Spot7 Storefront Traductions Français ---
 spot7:
     landing:
+        badge: 'Produits Smart Building'
         title_prefix: 'Explorez nos produits'
         title_highlight: 'et trouvez la solution parfaite'
         subtitle: 'Composants smart building pour chaque cas d''utilisation — du positionnement intérieur à l''affichage numérique.'
