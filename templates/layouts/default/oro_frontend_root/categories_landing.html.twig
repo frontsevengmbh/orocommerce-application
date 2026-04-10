@@ -682,17 +682,27 @@
        ist, wird ein Standard-Produktbild anhand des Namens verwendet.
        ============================================= #}
 
-    {# --- Fallback-Bilder fuer bekannte Kategorien --- #}
+    {# --- Fallback-Bilder fuer bekannte Kategorien (EN / DE / FR) --- #}
     {% set fallback_images = {
-        'e-paper':          '/images/spot7label_Standard_8-23.png',
-        'beacons':          '/images/spot7nano_Standard_8-23.png',
-        'anchors':          '/images/spot7anchor_Standard_8-23.png',
-        'anchor':           '/images/spot7anchor_Standard_8-23.png',
-        'sensors':          '/images/doorsensor.png',
-        'sensor':           '/images/doorsensor.png',
-        'wirepas gateway':  '/images/vortext_gehauese_01.png',
-        'gateway':          '/images/vortext_gehauese_01.png',
-        'gateways':         '/images/vortext_gehauese_01.png'
+        'e-paper':              '/images/spot7label_Standard_8-23.png',
+        'beacons':              '/images/spot7nano_Standard_8-23.png',
+        'balises':              '/images/spot7nano_Standard_8-23.png',
+        'anchors':              '/images/spot7anchor_Standard_8-23.png',
+        'anchor':               '/images/spot7anchor_Standard_8-23.png',
+        'ancres':               '/images/spot7anchor_Standard_8-23.png',
+        'ancre':                '/images/spot7anchor_Standard_8-23.png',
+        'anker':                '/images/spot7anchor_Standard_8-23.png',
+        'sensors':              '/images/doorsensor.png',
+        'sensor':               '/images/doorsensor.png',
+        'sensoren':             '/images/doorsensor.png',
+        'capteurs':             '/images/doorsensor.png',
+        'capteur':              '/images/doorsensor.png',
+        'wirepas gateway':      '/images/vortext_gehauese_01.png',
+        'passerelle wirepas':   '/images/vortext_gehauese_01.png',
+        'passerelle':           '/images/vortext_gehauese_01.png',
+        'passerelles':          '/images/vortext_gehauese_01.png',
+        'gateway':              '/images/vortext_gehauese_01.png',
+        'gateways':             '/images/vortext_gehauese_01.png'
     } %}
 
     <section class="category-cards">
@@ -921,7 +931,7 @@
         {# === CTA === #}
         <div class="smart-building__cta">
             <p class="smart-building__cta-text">{{ 'spot7.smart_building.cta_text'|trans }}</p>
-            <a href="/product/" class="smart-building__cta-btn">
+            <a href="{{ path('oro_product_frontend_product_index') }}" class="smart-building__cta-btn">
                 {{ 'spot7.smart_building.cta_button'|trans }}
                 <span class="smart-building__cta-btn-arrow">&rarr;</span>
             </a>
