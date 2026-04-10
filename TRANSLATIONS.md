@@ -62,6 +62,20 @@ Wenn auf der Seite z. B. `spot7.landing.title_prefix` statt dem übersetzten Tex
 
 ---
 
+## Neue Produkte erscheinen nicht im Storefront
+
+OroCommerce indexiert Produkte über einen Website-Search-Index. Wenn neue Produkte
+im Admin angelegt werden aber nicht im Storefront erscheinen, muss der Index manuell
+neu aufgebaut werden:
+
+```bash
+php bin/console oro:website-search:reindex --env=prod
+```
+
+Dieser Befehl ist auch nach größeren Datenänderungen (Kategorien, Preise etc.) empfehlenswert.
+
+---
+
 ## Wichtig: Sprachauswahl in OroCommerce
 
 OroCommerce nutzt **Localizations** (Admin → System → Localizations) um zu steuern, welche Sprach-Codes aktiv sind. Folgende Locales müssen dort aktiviert sein:
